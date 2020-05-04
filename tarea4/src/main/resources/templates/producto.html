@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+<style>
+label{
+	font-size: 18px;
+
+	}
+</style>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Ingreso de nuevo alumno</h1>
+	
+	<form method="post" th:action="@{/procesar}" th:object="${producto}">
+		<div><label class="normal-text">Codigo del producto: </label></div>
+		<br>
+		<div><input th:field="*{codProducto}" id="codProducto" type="number" placeholder="No menor a 1 caracter ni mas de 25 caracteres" name="codProducto" style="width: 300px; height:30px"/></div>
+	    <br>
+	    <div><label>Nombre del producto: </label></div>
+	    <br>
+	    <div><input th:field="*{nombreProducto}" input id="nombreProducto" type="text" placeholder="No menor a 1 caracter ni mas de 25 caracteres" name="nombreProducto" style="width: 300px; height:30px"/></div>
+	    <br>
+	    <div><label>Marca del producto: </label></div>
+	    <br>
+	    <div><input th:field="*{marca}" id="marca" type="text" name="marca" style="width: 300px; height:30px"/></div>
+	   	<br>
+	   	<div><label>Descripcion: </label></div>
+	   	<br>
+	   	<div><input th:field="*{descripcion}" id="descripcion" type="text" placeholder="Ingrese su lugar de nacimiento" name="descripcion" style="width: 300px; height:30px"/></div>
+	   	<br>
+	   	<div><label>Existencias: </label></div>
+	   	<br>
+		<div><input th:field="*{existencias}" id="existencias" type="number" placeholder="Ingrese su lugar de nacimiento" name="existencias" style="width: 300px; height:30px"/></div>
+	   	<br>
+	   	<div><label>Fecha de Ingreso: </label></div>
+	   	<br>
+	   	<div><input th:field="*{fechaIngreso}" id="fechaIngreso" type="date"  placeholder="Ingrese su numero telefono fijo" name="fechaIngreso" style="width: 300px; height:30px"/></div>
+	    <br>
+	    <br>
+	    <div><input type="submit"  value=" Guardar Producto" style="width: 150px; height:35px; background-color:DodgerBlue"/></div>
+	    
+	    </form>
+
+</body>
+</html>
