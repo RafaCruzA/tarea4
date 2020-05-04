@@ -1,20 +1,36 @@
 package com.uca.capas.tarea4.domain;
 
-import java.util.Date;
+
+
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 public class Producto {
-	Number codProducto;
-	String nombreProducto;
-	String marca;
-	String descripcion;
-	Number existencias;
-	Date fechaIngreso;
 	
-	public Number getCodProducto() {
+	@Pattern(regexp="[0-9]{12}", message="El codigo debe contener 12 digitos")
+	String codProducto;
+	
+	
+	@Size(min=1, max=100, message="El nombre del producto debe contener entre 1 y 100 caracteres")
+	String nombreProducto;
+	
+	@Size(min=1, max=100, message="El nombre de la marca debe contener entre 1 y 100 caracteres")
+	String marca;
+	
+	@Size(min=1, max=500, message="La descripcion debe contener entre 1 y 500 caracteres")
+	String descripcion;
+	
+	@Pattern(regexp="^\\d+$", message="No puede ser un numero decimal")
+	String existencias;
+	
+	@Pattern(regexp="^([0-2][0-9]|(3)[0-1])(\\/)(((0)[0-9])|((1)[0-2]))(\\/)\\d{4}$", message="La fecha debe ser en formato dd/MM/aaaa")
+	String fechaIngreso;
+	
+	public String getCodProducto() {
 		return codProducto;
 	}
 	
-	public void setcodProducto(Number codProducto) {
+	public void setcodProducto(String codProducto) {
 		this.codProducto = codProducto;
 	}
 	
@@ -42,19 +58,19 @@ public class Producto {
 		this.descripcion = descripcion;
 	}
 	
-	public Number getExistencias() {
+	public String getExistencias() {
 		return existencias;
 	}
 	
-	public void setExistencias(Number existencias) {
+	public void setExistencias(String existencias) {
 		this.existencias = existencias;
 	}
 	
-	public Date getFechaIngreso() {
+	public String getFechaIngreso() {
 		return fechaIngreso;
 	}
 	
-	public void setFechaIngreso(Date fechaIngreso) {
+	public void setFechaIngreso(String fechaIngreso) {
 		this.fechaIngreso = fechaIngreso;
 	}
 
